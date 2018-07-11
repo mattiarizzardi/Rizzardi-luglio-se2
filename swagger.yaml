@@ -7,6 +7,7 @@ info:
   contact:
     name: Mattia Rizzardi
     email: mattia.rizzardi-1@studenti.unitn.it
+    url: http://madskristensen.net
   license:
     name: MIT
     url: http://github.com/gruntjs/grunt/blob/master/LICENSE-MIT
@@ -24,6 +25,11 @@ paths:
       description: |
         Ritorna i dati relativi a un team.
       parameters:
+        - name: name
+          in: query
+          description: Filtro per Nome squadra
+          required: true
+          type: string
         - name: id
           in: query
           description: Filtro per ID

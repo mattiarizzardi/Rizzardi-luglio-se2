@@ -1,0 +1,109 @@
+swagger: "2.0"
+info:
+  version: 1.0.0
+  title: "trentose2jul11-mr"
+  description: Semplice API per la gestione di un team
+  termsOfService: http://swagger.io/terms/
+  contact:
+    name: Mattia Rizzardi
+    email: mattia.rizzardi-1@studenti.unitn.it
+  license:
+    name: MIT
+    url: http://github.com/gruntjs/grunt/blob/master/LICENSE-MIT
+host: trentose2jul11-mr.herokuapp.com
+basePath: /api/v1/
+schemes:
+  - http
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /team:
+    get:
+      description: |
+        Ritorna i dati relativi a un team.
+      parameters:
+        - name: id
+          in: query
+          description: Filtro per ID
+          required: false
+          type: integer
+          format: int32
+      responses:
+        200:
+          description: Informazioni del team
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/team'
+    post:
+      description: Inserisce un nuovo team
+      parameters:
+        - name: Team
+          in: body
+          description: Team da aggiungere
+          required: true
+          schema:
+            $ref: '#/definitions/newTeam'
+      responses:
+        200:
+          description: "Team aggiunto con successo!"
+    put:
+      description: Modifica i dati di un team
+      parameters:
+        - name: team
+          in: body
+          description: team da modificare
+          required: true
+          schema:
+            $ref: '#/definitions/editTeam'
+      responses:
+        200:
+          description: "Team modificato!"
+        404:
+          description: "Team non trovato!"
+
+definitions:
+  team:
+    required:
+      - id
+      - name
+      - is_still_in
+      - matches
+    properties:
+      id:
+        type: integer
+      name:
+        type: string
+      is_still_in:
+        type: boolean
+      matches:
+        type: array
+  newTeam:
+    required:
+      - id
+      - name
+      - is_still_in
+      - matches
+    properties:
+      id:
+        type: integer
+      name:
+        type: string
+      is_still_in:
+        type: boolean
+      matches:
+        type: array
+  editTeam:
+    required:
+      - id
+    properties:
+      id:
+        type: integer
+      name:
+        type: string
+      is_still_in:
+        type: boolean
+      matches:
+        type: array

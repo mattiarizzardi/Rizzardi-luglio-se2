@@ -1,0 +1,24 @@
+{
+  "name": "rizzardi-luglio-se2",
+  "version": "1.0.0",
+  "description": "Database about Mondial Football Team",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mattiarizzardi/Rizzardi-luglio-se2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mattiarizzardi/Rizzardi-luglio-se2/issues"
+  },
+  "homepage": "https://github.com/mattiarizzardi/Rizzardi-luglio-se2#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "uuid-v4": "^0.1.0"
+  }
+}
